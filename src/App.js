@@ -1,26 +1,57 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import {Header} from './components/Header';
+import {Board} from './components/Board';
+import {Context} from './Context';
+import {v4} from 'uuid';
 
 function App() {
+
+  const [columns, setColumns] = useState([
+    {
+      name: 'Column One',
+      titleInput: false,
+      cards: [
+        {
+          name: 'card one',
+          id: v4(),
+        },
+        {
+          name: 'card two',
+          id: v4(),
+        }
+      ],
+      id: v4(),
+    },
+    {
+      name: 'Column Two',
+      titleInput: true,
+      cards: [
+        {
+          name: 'First card in column two',
+          id: v4(),
+        },
+        {
+          name: 'card two in column two',
+          id: v4(),
+        }
+      ],
+      id: v4(),
+    },
+  ])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Context.Provider 
+        value={{
+          data: columns,
+        }}
+      >
+        <Board/>
+      </Context.Provider>
     </div>
   );
 }
 
-export default App;
+export {App};
