@@ -1,18 +1,19 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import styled from 'styled-components';
-import {Context} from '../../Context';
-import {GoPencil} from 'react-icons/go';
+import {RegularCardText} from './RegularCardText';
+import {CardIcon} from './CardIcon';
 
 export const RegularCard = () => {
-    let myContext = useContext(Context);
     return (
         <Wrapper>
-            {myContext.name}
+            <RegularCardText/>
+            <CardIcon/>
         </Wrapper>
     )
 }
 
 let Wrapper = styled.div`
+    position: relative;
     background: white;
     width: 256px;
     line-height: 1.5em;

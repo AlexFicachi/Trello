@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import {RegularCard} from './card/RegularCard';
+import {RegularCard} from './RegularCard';
 
 const Card = () => {
     return (

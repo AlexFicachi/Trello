@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import styled from 'styled-components';
-import {Column} from './Column';
+import {Column} from './column/Column';
 import {Context} from '../Context';
 
 export const Board = () => {

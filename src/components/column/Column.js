@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import {ColumnHeader} from './column/ColumnHeader';
-import {ColumnMain} from './column/ColumnMain';
-import {ColumnFoot} from './column/ColumnFoot';
+import {ColumnHeader} from './ColumnHeader';
+import {ColumnMain} from './ColumnMain';
+import {ColumnFoot} from './ColumnFoot';
 
 export const Column = () => {
     return (

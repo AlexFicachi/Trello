@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Context} from '../../Context';
 import styled from 'styled-components';
-import {Card} from '../Card';
+import {Card} from '../card/Card';
 
 export const ColumnMain = () => {
     const myContext = useContext(Context);

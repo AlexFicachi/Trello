@@ -16,16 +16,7 @@ let Wrapper = styled.div`
     align-items: center;
     justify-items: center;
     color: rgb(107,119,139);
-    & svg{
-        height: 32px;
-        width: 32px;
-        margin-top: -2px;
-        margin-right: -2px;
-    }
-    & svg:hover{
-        background: rgb(218,219,226);
-        border-radius: 3px;
-        cursor: pointer;
+    & :hover{
         color: #172b4d;
     }
 `
