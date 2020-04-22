@@ -27,6 +27,6 @@ export const ColumnMain = () => {
     )
 }
 
-let Wrapper = styled.div`
+const Wrapper = styled.div`
 
 `

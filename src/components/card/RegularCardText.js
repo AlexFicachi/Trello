@@ -4,7 +4,7 @@ import {Context} from '../../Context';
 
 export const RegularCardText = () => {
 
-    let myContext = useContext(Context);
+    const myContext = useContext(Context);
 
     return (
         <Wrapper>

@@ -6,8 +6,8 @@ import {Context} from '../../Context';
 
 export const CardIcon = () => {
 
-    let myContext = useContext(Context);
-    let color = myContext.theme.color.columnText
+    const myContext = useContext(Context);
+    const color = myContext.theme.color.columnText
 
     return (
         <Wrapper>

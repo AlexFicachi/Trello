@@ -15,13 +15,13 @@ export const Form = ({input, add, remove, justify}) => {
     )
 }
 
-let StyledForm = styled.form`
+const StyledForm = styled.form`
     display: grid;
     height: 100%;
     grid-template-rows: repeat(2, auto);
 `
 
-let Buttons = styled.div`
+const Buttons = styled.div`
     justify-content: ${({justify})=>justify};
     display: flex;
     align-items: center;

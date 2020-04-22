@@ -17,6 +17,6 @@ export const AddCardForm = () => {
     )
 }
 
-let Wrapper = styled.div`
+const Wrapper = styled.div`
 
 `

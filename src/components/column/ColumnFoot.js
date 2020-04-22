@@ -6,9 +6,9 @@ import {Context} from '../../Context';
 
 
 export const ColumnFoot = () => {
-    let myContext = useContext(Context);
+    const myContext = useContext(Context);
 
-    let columnFoot = myContext.state.addCardInput ? <AddCardForm/> : <AddAnotherCard/>
+    const columnFoot = myContext.state.addCardInput ? <AddCardForm/> : <AddAnotherCard/>
 
     return (
         <Wrapper>

@@ -21,7 +21,7 @@ export const GreenButton = ({text, animation}) => {
     )
 }
 
-let Wrapper = styled.div`
+const Wrapper = styled.div`
     margin-right: 8px;
 `
 

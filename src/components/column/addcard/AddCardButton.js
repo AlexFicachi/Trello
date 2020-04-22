@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import styled from 'styled-components';
 import {GreenButton} from '../../shared/GreenButton'
 
@@ -13,6 +13,6 @@ export const AddCardButton = () => {
     )
 }
 
-let Wrapper = styled.div`
+const Wrapper = styled.div`
     display: inline-block;
 `

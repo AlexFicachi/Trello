@@ -7,7 +7,7 @@ export const Header = () => {
     );
 }
 
-let Head = styled.div`
+const Head = styled.div`
     position: fixed;
     top: 0;
     font-weight: bold;

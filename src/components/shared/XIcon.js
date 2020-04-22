@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Icon} from './Icon';
 import styled from 'styled-components';
 import {IoMdClose} from 'react-icons/io';
+import {Context} from '../../Context';
 
 export const XIcon = () => {
+    const myContext = useContext(Context);
+    const color = myContext.theme.color.columnText;
+
     return (
-        <Wrapper>
+        <Wrapper
+            color={color}
+        >
             <Icon
                 icon={<IoMdClose size={24}/>}
             />

@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import {Context} from '../../Context';
 
 const Icon = ({icon}) => {
-    let myContext = useContext(Context);
-    let color = myContext.theme.color.columnTextLight;
+    const myContext = useContext(Context);
+    const color = myContext.theme.color.columnTextLight;
     return (
         <Wrapper
             color={color}
@@ -14,7 +14,7 @@ const Icon = ({icon}) => {
     )
 }
 
-let Wrapper = styled.div`
+const Wrapper = styled.div`
     justify-self: end;
     align-self: flex-start;
     display: flex;

@@ -34,7 +34,7 @@ function App() {
       {
         name: 'Column Two',
         columnTitleInput: false,
-        addCardInput: true,
+        addCardInput: false,
         cards: [
           {
             name: 'First card in column two',
@@ -59,10 +59,6 @@ function App() {
 
   const [inputDisplaying, setInputDisplaying] = useState(false);
 
-  setTimeout(()=>{
-    setInputDisplaying(true)
-  },1000)
-
   return (
     <div className="App">
       <Header/>
@@ -79,7 +75,7 @@ function App() {
   );
 }
 
-let theme = {
+const theme = {
   color: {
       columnText: '#2c3e50', // midnight blue
       columnTextLight: '#7f8c8d', // gray

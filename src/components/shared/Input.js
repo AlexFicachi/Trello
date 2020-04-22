@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Context} from '../../Context'
 
 export const Input = ({value, placeholder, animation}) => {
-    let myContext = useContext(Context);
+    const myContext = useContext(Context);
 
     return (
         <StyledInput 
@@ -15,7 +15,7 @@ export const Input = ({value, placeholder, animation}) => {
     )
 }
 
-let StyledInput = styled.input`
+const StyledInput = styled.input`
     margin-top: 1px;
     width: 100%;
     height: 0px;

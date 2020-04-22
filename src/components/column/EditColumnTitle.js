@@ -1,13 +1,12 @@
 import React, {useContext} from 'react'
 import styled from 'styled-components';
-import {Input} from '../shared/Input'
 import {Textarea} from '../shared/Textarea';
 import {Context} from '../../Context';
 
 export const EditColumnTitle = () => {
-    let myContext = useContext(Context);
+    const myContext = useContext(Context);
 
-    let value = myContext.state.name;
+    const value = myContext.state.name;
     
     return (
         <Wrapper>
@@ -23,7 +22,7 @@ export const EditColumnTitle = () => {
     )
 }
 
-let Wrapper = styled.div`
+const Wrapper = styled.div`
     border: 2px solid rgb(0,121,191);
     border-radius: 3px;
     margin-bottom: 3px;

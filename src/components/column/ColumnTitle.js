@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const ColumnTitle = () => {
 
-    let myContext = useContext(Context);
+    const myContext = useContext(Context);
 
     return (
         <Wrapper>
@@ -13,7 +13,8 @@ const ColumnTitle = () => {
     )
 }
 
-let Wrapper = styled.div`
+const Wrapper = styled.div`
+    cursor: pointer;
     line-height: 1.5em;
     font-weight: 600;
     margin-left: 8px;

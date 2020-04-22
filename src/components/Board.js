@@ -7,9 +7,9 @@ import {AddListForm} from './addlist/AddListForm';
 
 export const Board = () => {
 
-    let myContext = useContext(Context);
+    const myContext = useContext(Context);
 
-    let columns = myContext.state.columns.map(col=>{
+    const columns = myContext.state.columns.map(col=>{
         return (
             <Context.Provider
                 value={{
@@ -23,7 +23,7 @@ export const Board = () => {
         );
     })
 
-    let addList = myContext.inputDisplaying ? <AddListForm/> : <AddAnotherList/>;
+    const addList = myContext.inputDisplaying ? <AddListForm/> : <AddAnotherList/>;
 
     return (
         <Wrapper

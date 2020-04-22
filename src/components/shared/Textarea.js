@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import {Context} from '../../Context';
 
 export const Textarea = ({value, placeholder, paddingBottom, paddingTop, paddingLeft, paddingRight, bold}) => {
-    let myContext = useContext(Context)
-    let color = myContext.theme.color.columnText;
+    const myContext = useContext(Context)
+    const color = myContext.theme.color.columnText;
 
-    let myRef = useRef();
-    let [scrollHeight, setScrollHeight] = useState();
+    const myRef = useRef();
+    const [scrollHeight, setScrollHeight] = useState();
 
     useEffect(()=>{
         setScrollHeight(myRef.current.scrollHeight);
@@ -31,7 +31,7 @@ export const Textarea = ({value, placeholder, paddingBottom, paddingTop, padding
         </Wrapper>
     )
 }
-let Wrapper = styled.div`
+const Wrapper = styled.div`
     padding-left: ${({paddingLeft})=>paddingLeft || '7px'};
     padding-right: ${({paddingRight})=>paddingRight || '7px'};
     padding-top: ${({paddingTop})=>paddingTop || '5px'};
@@ -40,7 +40,7 @@ let Wrapper = styled.div`
     border-radius: 3px;
 `
 
-let StyledTextarea = styled.textarea`
+const StyledTextarea = styled.textarea`
     font-weight: ${({bold})=>bold && '600'};
     height: ${({height})=>height || '20'}px;
     color: ${({color})=>color};

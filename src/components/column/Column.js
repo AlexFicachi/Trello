@@ -8,9 +8,9 @@ import {Context} from '../../Context';
 
 export const Column = () => {
 
-    let myContext = useContext(Context);
+    const myContext = useContext(Context);
 
-    let color = myContext.theme.color.columnText
+    const color = myContext.theme.color.columnText
 
     return (
         <Wrapper color={color}>

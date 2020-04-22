@@ -1,4 +1,4 @@
-let Animation = (height, name) => {
+const Animation = (height, name) => {
     return `
     @keyframes ${name}{
         0%{

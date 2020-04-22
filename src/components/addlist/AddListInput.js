@@ -14,7 +14,7 @@ export const AddListInput = () => {
     )
 }
 
-let Wrapper = styled.div`
+const Wrapper = styled.div`
 
 `
 

@@ -12,7 +12,7 @@ export const ToggleInput = ({color, text, fontWeight}) => {
     )
 }
 
-let Wrapper = styled.div`
+const Wrapper = styled.div`
     font-weight: ${({fontWeight})=>fontWeight};
     color: ${({color})=>color};
     padding: 5px 10px;
@@ -20,7 +20,7 @@ let Wrapper = styled.div`
     border-radius: 3px;
 `
 
-let Plus = styled.span`
+const Plus = styled.span`
     font-weight: 400;
     font-size: 20px;
     margin-right: 7px;

@@ -18,7 +18,7 @@ export const AddListForm = () => {
     )
 }
 
-let Wrapper = styled.div`
+const Wrapper = styled.div`
     background: rgb(235,236,240);
     width: 272px;
     padding: 4px;

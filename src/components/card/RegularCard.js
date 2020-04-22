@@ -12,7 +12,7 @@ export const RegularCard = () => {
     )
 }
 
-let Wrapper = styled.div`
+const Wrapper = styled.div`
     position: relative;
     background: white;
     width: 100%;

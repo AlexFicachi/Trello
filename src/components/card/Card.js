@@ -6,7 +6,7 @@ import {Context} from '../../Context';
 
 const Card = () => {
 
-    let myContext = useContext(Context)
+    const myContext = useContext(Context)
     return (
         <Wrapper>
             <RegularCard/>
@@ -15,7 +15,7 @@ const Card = () => {
     )
 }
 
-let Wrapper = styled.div`
+const Wrapper = styled.div`
     position: relative;
 `
 

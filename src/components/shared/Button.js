@@ -14,7 +14,7 @@ export const Button = ({text, color, hover, width, animation}) => {
     )
 }
 
-let Btn = styled.button`
+const Btn = styled.button`
     ${({animation})=>animation && animation('32px','add')}
     background: ${({color})=>color};
     color: white;
