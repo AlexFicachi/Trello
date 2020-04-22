@@ -10,13 +10,13 @@ function App() {
         Add react-beautiful-dnd
         Add inverse dataflow
   */
-  const [state, setstate] = useState({
-    columns:
+  const [state, setstate] = useState(
     [
       {
         name: 'Column One super long loansdgnasdognasdglaksdjgalsdkfjasldfkjasldfkjasldkfjsad flong long',
         columnTitleInput: false,
         addCardInput: false,
+        id: v4(),
         cards: [
           {
             name: 'card one',
@@ -29,12 +29,12 @@ function App() {
             editCardInput: false,
           }
         ],
-        id: v4(),
       },
       {
         name: 'Column Two',
         columnTitleInput: false,
         addCardInput: false,
+        id: v4(),
         cards: [
           {
             name: 'First card in column two',
@@ -52,10 +52,9 @@ function App() {
             editCardInput: false,
           }
         ],
-        id: v4(),
       },
     ],
-  })
+  )
 
   const [inputDisplaying, setInputDisplaying] = useState(false);
 

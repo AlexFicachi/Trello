@@ -9,7 +9,7 @@ export const Board = () => {
 
     const myContext = useContext(Context);
 
-    const columns = myContext.state.columns.map(col=>{
+    const columns = myContext.state.map(col=>{
         return (
             <Context.Provider
                 value={{
@@ -27,7 +27,7 @@ export const Board = () => {
 
     return (
         <Wrapper
-            width={myContext.state.columns.length}
+            width={myContext.state.length}
         >
             {columns}
             {addList}
