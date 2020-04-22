@@ -1,33 +1,25 @@
-import React, {useRef, useEffect, useState} from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components';
 import {GoPencil} from 'react-icons/go';
 import {Icon} from '../shared/Icon';
+import {Context} from '../../Context';
 
 export const CardIcon = () => {
 
-    let [height, setHeight] = useState();
-
-    let myRef = useRef()
-
-    useEffect(()=>{
-        setHeight(myRef.current.offsetHeight);
-    },[]);
+    let myContext = useContext(Context);
+    let color = myContext.theme.color.columnText
 
     return (
-        <Wrapper
-            ref={myRef}
-            myRef={myRef}
-            height={height}
-        >
+        <Wrapper>
             <Icon
-                icon={<GoPencil size={15}/>}
+                icon={<GoPencil size={15} color={color}/>}
             />
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
-    display: flex;
+    display: none;
     justify-content: center;
     padding: 5px 0;
     position: absolute;
@@ -35,13 +27,13 @@ const Wrapper = styled.div`
     margin-right: 2px;
     top: 0;
     right: 0;
-    height: 89%;
-    width: ${({height})=>height}px;
+    height: 28px;
+    width: 28px;
     border-radius: 3px;
+    background: rgb(244,245,247);
+    opacity: 0.7;
     &:hover{
         background: rgb(218,219,226);
-        & *{
-            color: #172b4d;
-        }
+        opacity: 1;
     }
 `

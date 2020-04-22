@@ -8,7 +8,7 @@ const ColumnTitle = () => {
 
     return (
         <Wrapper>
-            {myContext.name}
+            {myContext.state.name}
         </Wrapper>
     )
 }

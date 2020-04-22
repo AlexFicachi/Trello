@@ -5,12 +5,13 @@ import {Card} from '../card/Card';
 
 export const ColumnMain = () => {
     const myContext = useContext(Context);
-    let cards = myContext.cards.map(card=>{
+    const theme = myContext.theme
+    const cards = myContext.state.cards.map(card=>{
         return (
             <Context.Provider
                 value={{
-                    name: card.name,
-                    id: card.id,
+                    state: card,
+                    theme
                 }}
                 key={card.id}
             >

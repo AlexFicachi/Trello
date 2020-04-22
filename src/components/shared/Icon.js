@@ -1,9 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components'
+import {Context} from '../../Context';
 
 const Icon = ({icon}) => {
+    let myContext = useContext(Context);
+    let color = myContext.theme.color.columnTextLight;
     return (
-        <Wrapper>
+        <Wrapper
+            color={color}
+        >
             {icon}
         </Wrapper>
     )
@@ -15,10 +20,7 @@ let Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-items: center;
-    color: rgb(107,119,139);
-    & :hover{
-        color: #172b4d;
-    }
+    color: ${({color})=>color};
 `
 
 export {Icon};

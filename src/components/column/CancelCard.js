@@ -4,30 +4,28 @@ import {IoMdClose} from 'react-icons/io';
 import {Icon} from '../shared/Icon';
 import {Context} from '../../Context';
 
-export const ColumnIcon = () => {
+export const CancelCard = () => {
     const myContext = useContext(Context);
     const color = myContext.theme.color.columnText;
 
     return (
         <Wrapper color={color}>
             <Icon
-                icon={<IoMdClose size={32}/>}
+                icon={<IoMdClose size={24}/>}
             />
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
+    height: 24px;
+    display: inline-flex;
+    cursor: pointer;
+    opacity: 0.7;
     & *{
         color: ${({color})=>color};
     }
-    opacity: 0.7;
-    border-radius: 3px;
-    margin-top: -2px;
-    margin-right: -2px;
-    cursor: pointer;
     &:hover {
-        background: rgb(218,219,226);
         opacity: 1;
     }
 `

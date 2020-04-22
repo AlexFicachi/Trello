@@ -8,7 +8,7 @@ import {ColumnIcon} from './ColumnIcon';
 export const ColumnHeader = () => {
     let myContext = useContext(Context);
 
-    let title = myContext.titleInput ? <EditColumnTitle/> : <ColumnTitle/>;
+    let title = myContext.state.columnTitleInput ? <EditColumnTitle/> : <ColumnTitle/>;
 
     return (
         <Wrapper>

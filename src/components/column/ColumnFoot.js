@@ -1,10 +1,18 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components';
+import {AddAnotherCard} from './AddAnotherCard';
+import {AddCardForm} from './AddCardForm'
+import {Context} from '../../Context';
+
 
 export const ColumnFoot = () => {
+    let myContext = useContext(Context);
+
+    let columnFoot = myContext.state.addCardInput ? <AddCardForm/> : <AddAnotherCard/>
+
     return (
         <Wrapper>
-            foot
+            {columnFoot}
         </Wrapper>
     )
 }

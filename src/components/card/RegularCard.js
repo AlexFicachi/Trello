@@ -15,9 +15,9 @@ export const RegularCard = () => {
 let Wrapper = styled.div`
     position: relative;
     background: white;
-    width: 256px;
+    width: 100%;
     line-height: 1.5em;
-    padding: 6px 5px 5px 11px;
+    padding: 5px 5px 5px 8px;
     border-radius: 4px;
     min-height: 32px;
     cursor: pointer;
@@ -25,5 +25,8 @@ let Wrapper = styled.div`
     margin-bottom: 8px;
     &:hover{
         background: rgb(244,245,247);
+        & div:last-of-type{
+            display: flex;
+        }
     }
 `

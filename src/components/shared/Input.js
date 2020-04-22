@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components';
+import {Context} from '../../Context'
 
 export const Input = ({value}) => {
+    let myContext = useContext(Context);
+
     return (
         <StyledInput 
             value={value}
+            color={myContext.theme.color.columnText}
         />
     )
 }
@@ -20,6 +24,6 @@ let StyledInput = styled.input`
     padding: 3px 6px;
     padding-bottom: 4px;
     font-weight: 550;
-    color: #172b4d;
+    color: ${({color})=>color};
 `
 

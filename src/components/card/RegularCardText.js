@@ -8,11 +8,11 @@ export const RegularCardText = () => {
 
     return (
         <Wrapper>
-            {myContext.name}
+            {myContext.state.name}
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
-
+    white-space: normal;
 `
