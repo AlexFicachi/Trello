@@ -1,24 +1,27 @@
-import React, {useRef, useContext} from 'react'
-import styled from 'styled-components';
-import {Button} from '../shared/Button'
+import React, {useContext} from 'react'
 import {Context} from '../../Context';
-export const AddCardButton = () => {
+import {Button} from './Button';
+import styled from 'styled-components';
+
+export const GreenButton = ({text, animation}) => {
     const myContext = useContext(Context);
     const color = myContext.theme.color.addButton;
     const hover = myContext.theme.color.addButtonHover;
+
     return (
         <Wrapper>
             <Button
-                text={'Add Card'}
                 color={color}
                 hover={hover}
                 width={10}
+                text={text}
+                animation={animation}
             />
         </Wrapper>
     )
 }
 
 let Wrapper = styled.div`
-    display: inline-block;
     margin-right: 8px;
 `
+

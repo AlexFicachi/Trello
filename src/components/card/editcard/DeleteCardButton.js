@@ -1,15 +1,16 @@
 import React, {useRef, useContext} from 'react'
 import styled from 'styled-components';
-import {Button} from '../shared/Button'
-import {Context} from '../../Context';
-export const SaveCardButton = () => {
+import {Button} from '../../shared/Button'
+import {Context} from '../../../Context';
+
+export const DeleteCardButton = () => {
     const myContext = useContext(Context);
-    const color = myContext.theme.color.addButton;
-    const hover = myContext.theme.color.addButtonHover;
+    const color = myContext.theme.color.deleteButton;
+    const hover = myContext.theme.color.deleteButtonHover;
     return (
         <Wrapper>
             <Button
-                text={'Save'}
+                text={'Delete'}
                 color={color}
                 hover={hover}
                 width={24}

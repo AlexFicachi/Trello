@@ -21,6 +21,7 @@ let Wrapper = styled.div`
 `
 
 let Plus = styled.span`
+    font-weight: 400;
     font-size: 20px;
     margin-right: 7px;
 `

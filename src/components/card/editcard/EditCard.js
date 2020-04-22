@@ -3,17 +3,18 @@ import styled from 'styled-components';
 import {EditCardInput} from './EditCardInput';
 import {SaveCardButton} from './SaveCardButton';
 import {DeleteCardButton} from './DeleteCardButton';
-
+import {Form} from '../../shared/Form';
 export const EditCard = () => {
     return (
         <>
             <Background/>
             <Wrapper>
-                    <EditCardInput/>
-                <Buttons>
-                    <SaveCardButton/>
-                    <DeleteCardButton/>
-                </Buttons>
+                 <Form
+                     input={<EditCardInput/>}
+                     add={<SaveCardButton/>}
+                     remove={<DeleteCardButton/>}
+                     justify={'space-around'}
+                 />
             </Wrapper>
         </>
     )
@@ -24,11 +25,6 @@ const Wrapper = styled.div`
     top: 0;
     width: 100%;
     z-index: 2;
-`
-
-const Buttons = styled.div`
-    display: flex;
-    justify-content: space-around;
 `
 
 const Background = styled.div`

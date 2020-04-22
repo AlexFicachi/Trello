@@ -3,24 +3,20 @@ import styled from 'styled-components';
 import {AddCardInput} from './AddCardInput';
 import {AddCardButton} from './AddCardButton';
 import {CancelCard} from './CancelCard';
+import {Form} from '../../shared/Form'
 
 export const AddCardForm = () => {
     return (
         <Wrapper>
-            <AddCardInput/>
-            <Buttons>
-                <AddCardButton/>
-                <CancelCard/>
-            </Buttons>
+            <Form
+                input={<AddCardInput/>}
+                add={<AddCardButton/>}
+                remove={<CancelCard/>}
+            />
         </Wrapper>
     )
 }
 
 let Wrapper = styled.div`
 
-`
-
-let Buttons = styled.div`
-    display: flex;
-    align-items: center;
 `

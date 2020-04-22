@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const Button = ({text, color, hover, width}) => {
+export const Button = ({text, color, hover, width, animation}) => {
     return (
         <Btn
             color={color}
             hover={hover}
             width={width}
+            animation={animation}
         >
             {text}
         </Btn>
@@ -14,6 +15,7 @@ export const Button = ({text, color, hover, width}) => {
 }
 
 let Btn = styled.button`
+    ${({animation})=>animation && animation('32px','add')}
     background: ${({color})=>color};
     color: white;
     padding: 6px ${({width})=>width}px;

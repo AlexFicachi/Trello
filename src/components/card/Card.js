@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import styled from 'styled-components';
 import {RegularCard} from './RegularCard';
-import {EditCard} from './EditCard';
+import {EditCard} from './editcard/EditCard';
 import {Context} from '../../Context';
 
 const Card = () => {

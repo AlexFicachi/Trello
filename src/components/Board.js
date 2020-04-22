@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import {Column} from './column/Column';
 import {Context} from '../Context';
 import {AddAnotherList} from './AddAnotherList';
+import {AddListForm} from './addlist/AddListForm';
 
 export const Board = () => {
 
     let myContext = useContext(Context);
 
-    let columns = myContext.state.map(col=>{
+    let columns = myContext.state.columns.map(col=>{
         return (
             <Context.Provider
                 value={{
@@ -22,19 +23,21 @@ export const Board = () => {
         );
     })
 
+    let addList = myContext.inputDisplaying ? <AddListForm/> : <AddAnotherList/>;
+
     return (
         <Wrapper
-            width={myContext.state.length}
+            width={myContext.state.columns.length}
         >
             {columns}
-            <AddAnotherList/>
+            {addList}
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
     font-size: 14px;
-    min-width: ${props=>(props.width*280)+288}px;
+    min-width: ${({width})=>(width*280)+288}px;
     height: 100%;
     background: rgb(0,121,191);
     white-space: nowrap;

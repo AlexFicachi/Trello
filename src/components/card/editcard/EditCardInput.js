@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import styled from 'styled-components';
-import {Textarea} from '../shared/Textarea'
-import {Context} from '../../Context';
+import {Textarea} from '../../shared/Textarea'
+import {Context} from '../../../Context';
 
 export const EditCardInput = () => {
     const myContext = useContext(Context);
@@ -10,6 +10,7 @@ export const EditCardInput = () => {
         <Wrapper>
             <Textarea
                 value={value}
+                paddingLeft={'8px'}
             />
         </Wrapper>
     )
