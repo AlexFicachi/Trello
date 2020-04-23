@@ -27,7 +27,9 @@ export const Board = () => {
 
     return (
         <Wrapper
-            width={myContext.state.length}
+            myStyle={`
+                min-width: ${(myContext.state.length*280)+288}px;
+            `}
         >
             {columns}
             {addList}
@@ -37,7 +39,6 @@ export const Board = () => {
 
 const Wrapper = styled.div`
     font-size: 14px;
-    min-width: ${({width})=>(width*280)+288}px;
     height: 100%;
     background: rgb(0,121,191);
     white-space: nowrap;
@@ -45,4 +46,5 @@ const Wrapper = styled.div`
     padding: 8px;
     display: flex;
     align-items: flex-start;
+    ${({myStyle})=>myStyle}
 `

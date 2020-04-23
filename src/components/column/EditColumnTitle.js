@@ -12,11 +12,15 @@ export const EditColumnTitle = () => {
         <Wrapper>
             <Textarea
                 value={value}
-                paddingBottom={'0px'}
-                paddingTop={'2px'}
-                paddingLeft={'6px'}
-                paddingRight={'0px'}
-                bold
+                myStyle={`
+                    font-weight: 600;
+                `}
+                wrapperStyle={`
+                    padding-bottom: 0px;
+                    padding-top: 2px;
+                    padding-left: 6px;
+                    padding-right: 0px;
+                `}
             />
         </Wrapper>
     )

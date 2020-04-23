@@ -4,13 +4,15 @@ import {Context} from '../../Context'
 
 export const Input = ({value, placeholder, animation}) => {
     const myContext = useContext(Context);
-
+    let color = myContext.theme.color.columnText;
     return (
         <StyledInput 
             value={value}
-            color={myContext.theme.color.columnText}
             placeholder={placeholder}
             animation={animation}
+            myStyle={`
+                color: ${color};
+            `}
         />
     )
 }
@@ -26,7 +28,7 @@ const StyledInput = styled.input`
     padding: 3px 6px;
     padding-bottom: 4px;
     font-weight: 500;
-    color: ${({color})=>color};
+    ${({myStyle})=>myStyle};
     ${({animation})=>animation('36px', 'input')}
 `
 //     ${({animation})=>animation('36px')}

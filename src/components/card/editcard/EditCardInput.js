@@ -10,7 +10,9 @@ export const EditCardInput = () => {
         <Wrapper>
             <Textarea
                 value={value}
-                paddingLeft={'8px'}
+                wrapperStyle={`
+                    padding-left: 8px
+                `}
             />
         </Wrapper>
     )

@@ -30,10 +30,10 @@ function App() {
           }
         ],
       },
-      {
+      /*{
         name: 'Column Two',
         columnTitleInput: false,
-        addCardInput: false,
+        addCardInput: true,
         id: v4(),
         cards: [
           {
@@ -52,7 +52,7 @@ function App() {
             editCardInput: false,
           }
         ],
-      },
+      },*/
     ],
   )
 

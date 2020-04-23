@@ -13,7 +13,9 @@ export const EditCard = () => {
                      input={<EditCardInput/>}
                      add={<SaveCardButton/>}
                      remove={<DeleteCardButton/>}
-                     justify={'space-around'}
+                     buttonContainerStyle={`
+                        justify-content: space-around;
+                     `}
                  />
             </Wrapper>
         </>

@@ -5,14 +5,11 @@ import {Context} from '../../Context';
 
 export const AddAnotherCard = () => {
     const myContext = useContext(Context)
-    const color = myContext.theme.color.columnText;
-
 
     return (
         <Wrapper>
             <ToggleInput
                 text={'Add another card'}
-                color={color}
             />
         </Wrapper>
     )

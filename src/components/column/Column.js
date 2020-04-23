@@ -7,13 +7,13 @@ import {Context} from '../../Context';
 
 
 export const Column = () => {
-
     const myContext = useContext(Context);
-
     const color = myContext.theme.color.columnText
 
     return (
-        <Wrapper color={color}>
+        <Wrapper myStyle={`
+            color: ${color};
+        `}>
             <ColumnHeader/>
             <ColumnMain/>
             <ColumnFoot/>
@@ -31,7 +31,7 @@ const Wrapper = styled.div`
     padding: 5px;
     padding-right: 8px;
     padding-left: 8px;
-    color: ${({color})=>color};
     font-size: 14px;
     line-height: 20px;
+    ${({myStyle})=>myStyle}
 `

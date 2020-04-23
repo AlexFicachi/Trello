@@ -11,11 +11,16 @@ export const GreenButton = ({text, animation}) => {
     return (
         <Wrapper>
             <Button
-                color={color}
-                hover={hover}
-                width={10}
                 text={text}
                 animation={animation}
+                myStyle={`
+                    background: ${color};
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    &:hover{
+                        background: ${hover};
+                    }
+                `}
             />
         </Wrapper>
     )

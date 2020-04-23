@@ -10,7 +10,9 @@ export const XIcon = () => {
 
     return (
         <Wrapper
-            color={color}
+            myStyle={`
+                color: ${color}; 
+            `}
         >
             <Icon
                 icon={<IoMdClose size={24}/>}
@@ -23,12 +25,10 @@ const Wrapper = styled.div`
     height: 24px;
     cursor: pointer;
     opacity: 0.7;
-    & *{
-        color: ${({color})=>color};
-    }
     &:hover {
         opacity: 1;
     }
+    ${({myStyle})=>myStyle};
 `
 
 

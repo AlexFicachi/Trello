@@ -1,11 +1,10 @@
 import React from 'react'
 import styled from 'styled-components';
 
-export const ToggleInput = ({color, text, fontWeight}) => {
+export const ToggleInput = ({text, myStyle}) => {
     return (
         <Wrapper
-            color={color}
-            fontWeight={fontWeight}
+            myStyle={myStyle}
         >
             <Plus>+</Plus>{text}
         </Wrapper>
@@ -13,11 +12,10 @@ export const ToggleInput = ({color, text, fontWeight}) => {
 }
 
 const Wrapper = styled.div`
-    font-weight: ${({fontWeight})=>fontWeight};
-    color: ${({color})=>color};
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 3px;
+    ${({myStyle})=>myStyle};
 `
 
 const Plus = styled.span`

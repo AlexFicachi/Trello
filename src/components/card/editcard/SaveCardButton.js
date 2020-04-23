@@ -10,9 +10,14 @@ export const SaveCardButton = () => {
         <Wrapper>
             <Button
                 text={'Save'}
-                color={color}
-                hover={hover}
-                width={24}
+                myStyle={`
+                    background: ${color};
+                    padding-left: 24px;
+                    padding-right: 24px;
+                    &:hover{
+                        background: ${hover};
+                    }
+                `}
             />
         </Wrapper>
     )

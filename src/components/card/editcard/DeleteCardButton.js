@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import styled from 'styled-components';
 import {Button} from '../../shared/Button'
-import {Context} from '../../../Context';
+import {Context} from '../../../Context'; 
 
 export const DeleteCardButton = () => {
     const myContext = useContext(Context);
@@ -11,9 +11,14 @@ export const DeleteCardButton = () => {
         <Wrapper>
             <Button
                 text={'Delete'}
-                color={color}
-                hover={hover}
-                width={24}
+                myStyle={`
+                    padding-left: 24px;
+                    padding-right: 24px;
+                    background: ${color};
+                    &:hover{
+                        background: ${hover};
+                    }
+                `}
             />
         </Wrapper>
     )

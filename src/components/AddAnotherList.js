@@ -8,8 +8,10 @@ export const AddAnotherList = () => {
         <Wrapper>
             <ToggleInput
                 text={'Add another list'}
-                color={'white'}
-                fontWeight={550}
+                myStyle={`
+                    color: white;
+                    font-weight: 550;
+                `}
             />
         </Wrapper>
     )
@@ -22,7 +24,7 @@ const Wrapper = styled.div`
     height: 40px;
     width: 272px;
     background: hsla(0,0%,100%,.24);
-    transition: background 85ms ease-in,opacity 40ms ease-in,border-color 85ms ease-in;
+    transition: 0.1s;
     border-radius: 3px;
     &:hover{
         background: #5BA4D4;

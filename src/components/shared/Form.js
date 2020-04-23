@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components';
 
-export const Form = ({input, add, remove, justify}) => {
+export const Form = ({input, add, remove, buttonContainerStyle}) => {
     return (
         <StyledForm>
             {input}
             <Buttons
-                justify={justify}
+                myStyle={buttonContainerStyle}
             >
                 {add}
                 {remove}
@@ -22,9 +22,9 @@ const StyledForm = styled.form`
 `
 
 const Buttons = styled.div`
-    justify-content: ${({justify})=>justify};
     display: flex;
     align-items: center;
     width: 100%;
     align-self: end;
+    ${({myStyle})=>myStyle}
 `
