@@ -1,14 +1,29 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components';
 import {RegularCardText} from './RegularCardText';
 import {CardIcon} from './CardIcon';
+import {Draggable} from 'react-beautiful-dnd';
+import {Context} from '../../Context';
 
 export const RegularCard = () => {
+    const myContext = useContext(Context);
+
     return (
-        <Wrapper>
-            <RegularCardText/>
-            <CardIcon/>
-        </Wrapper>
+        <Draggable
+            draggableId={myContext.state.id}
+            index={myContext.cardIndex}
+        >
+            {(provided)=>
+                <Wrapper
+                    {...provided.draggableProps}
+                    {...provided.dragHandleProps}
+                    ref={provided.innerRef}
+                >
+                    <RegularCardText/>
+                    <CardIcon/>
+                </Wrapper>
+            }
+        </Draggable>
     )
 }
 

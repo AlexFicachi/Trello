@@ -5,7 +5,6 @@ import {Context} from '../../Context';
 
 export const EditColumnTitle = () => {
     const myContext = useContext(Context);
-
     const value = myContext.state.name;
     
     return (

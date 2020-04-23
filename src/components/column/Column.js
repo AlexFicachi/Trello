@@ -4,19 +4,34 @@ import {ColumnHeader} from './ColumnHeader';
 import {ColumnMain} from './ColumnMain';
 import {ColumnFoot} from './ColumnFoot';
 import {Context} from '../../Context';
-
+import {Droppable} from 'react-beautiful-dnd';
 
 export const Column = () => {
     const myContext = useContext(Context);
     const color = myContext.theme.color.columnText
 
     return (
-        <Wrapper myStyle={`
-            color: ${color};
-        `}>
+
+        <Wrapper 
+            myStyle={`
+                color: ${color};
+            `}
+        >
             <ColumnHeader/>
-            <ColumnMain/>
-            <ColumnFoot/>
+            <Droppable
+                droppableId={myContext.state.id}
+            >
+                {(provided)=>
+                    <div
+                        ref={provided.innerRef}
+                        {...provided.droppableProps}
+                    >
+                        <ColumnMain/>
+                        {provided.placeholder}
+                        <ColumnFoot/>
+                    </div>
+                }
+            </Droppable>
         </Wrapper>
     )
 }

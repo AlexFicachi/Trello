@@ -4,11 +4,10 @@ import {Column} from './column/Column';
 import {Context} from '../Context';
 import {AddAnotherList} from './AddAnotherList';
 import {AddListForm} from './addlist/AddListForm';
+import {DragDropContext} from 'react-beautiful-dnd';
 
 export const Board = () => {
-
     const myContext = useContext(Context);
-
     const columns = myContext.state.map(col=>{
         return (
             <Context.Provider
@@ -18,7 +17,7 @@ export const Board = () => {
                 }}
                 key={col.id}
             >
-                <Column/>
+                <Column/>                
             </Context.Provider>
         );
     })
@@ -31,7 +30,11 @@ export const Board = () => {
                 min-width: ${(myContext.state.length*280)+288}px;
             `}
         >
-            {columns}
+            <DragDropContext
+                onDragEnd={myContext.functions.onDragEnd}
+            >
+                {columns}
+            </DragDropContext>
             {addList}
         </Wrapper>
     )

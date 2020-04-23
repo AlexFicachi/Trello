@@ -31,5 +31,4 @@ const StyledInput = styled.input`
     ${({myStyle})=>myStyle};
     ${({animation})=>animation('36px', 'input')}
 `
-//     ${({animation})=>animation('36px')}
 

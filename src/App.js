@@ -4,13 +4,14 @@ import {Header} from './components/Header';
 import {Board} from './components/Board';
 import {Context} from './Context';
 import {v4} from 'uuid';
+import {useDragnDrop} from './components/useDragnDrop';
+
 
 function App() {
   /*  TODO
-        Add react-beautiful-dnd
         Add inverse dataflow
   */
-  const [state, setstate] = useState(
+  const [state, setState] = useState(
     [
       {
         name: 'Column One super long loansdgnasdognasdglaksdjgalsdkfjasldfkjasldfkjasldkfjsad flong long',
@@ -30,7 +31,7 @@ function App() {
           }
         ],
       },
-      /*{
+      {
         name: 'Column Two',
         columnTitleInput: false,
         addCardInput: true,
@@ -52,9 +53,10 @@ function App() {
             editCardInput: false,
           }
         ],
-      },*/
+      },
     ],
   )
+  const [onDragEnd] = useDragnDrop(state, setState);
 
   const [inputDisplaying, setInputDisplaying] = useState(false);
 
@@ -66,6 +68,9 @@ function App() {
           state: state,
           theme,
           inputDisplaying,
+          functions: {
+            onDragEnd,
+          }
         }}
       >
         <Board/>
