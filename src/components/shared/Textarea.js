@@ -2,10 +2,9 @@ import React, {useEffect, useRef, useState, useContext} from 'react'
 import styled from 'styled-components';
 import {Context} from '../../Context';
 
-export const Textarea = ({value, placeholder, wrapperStyle, myStyle}) => {
+export const Textarea = ({value, placeholder, wrapperStyle, myStyle, bind}) => {
     const myContext = useContext(Context)
     const color = myContext.theme.color.columnText;
-
     const myRef = useRef();
     const [scrollHeight, setScrollHeight] = useState();
 
@@ -30,6 +29,7 @@ export const Textarea = ({value, placeholder, wrapperStyle, myStyle}) => {
                 value={value}
                 ref={myRef}
                 placeholder={placeholder}
+                {...bind}
             />
         </Wrapper>
     )

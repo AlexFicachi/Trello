@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import styled from 'styled-components';
-import {Button} from '../../shared/Button'
+import {SubmitButton} from '../../shared/SubmitButton'
 import {Context} from '../../../Context';
 export const SaveCardButton = () => {
     const myContext = useContext(Context);
@@ -8,7 +8,7 @@ export const SaveCardButton = () => {
     const hover = myContext.theme.color.addButtonHover;
     return (
         <Wrapper>
-            <Button
+            <SubmitButton
                 text={'Save'}
                 myStyle={`
                     background: ${color};

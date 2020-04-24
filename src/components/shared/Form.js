@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components';
 
-export const Form = ({input, add, remove, buttonContainerStyle}) => {
+export const Form = ({input, add, remove, buttonContainerStyle, onSubmit}) => {
     return (
         <StyledForm
-            onSubmit={(e)=>e.preventDefault()}
+            onSubmit={onSubmit}
         >
             {input}
             <Buttons

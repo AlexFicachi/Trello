@@ -1,18 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const Button = ({text, animation, myStyle}) => {
+export const SubmitButton = ({text, animation, myStyle}) => {
     return (
         <Btn 
             animation={animation}
             myStyle={myStyle}
+            value={text}
+            type={'submit'}
         >
-            {text}
+            
         </Btn>
     )
 }
 
-const Btn = styled.button`
+const Btn = styled.input`
     color: white;
     padding-top: 6px;
     padding-bottom: 6px;

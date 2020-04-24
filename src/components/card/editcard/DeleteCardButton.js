@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import styled from 'styled-components';
-import {Button} from '../../shared/Button'
+import {SubmitButton} from '../../shared/SubmitButton'
 import {Context} from '../../../Context'; 
 
 export const DeleteCardButton = () => {
@@ -15,7 +15,7 @@ export const DeleteCardButton = () => {
         <Wrapper
             onClick={()=>deleteCard(cardIndex, columnIndex)}
         >
-            <Button
+            <SubmitButton
                 text={'Delete'}
                 myStyle={`
                     padding-left: 24px;

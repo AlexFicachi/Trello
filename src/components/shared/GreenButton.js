@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {Context} from '../../Context';
-import {Button} from './Button';
+import {SubmitButton} from './SubmitButton';
 import styled from 'styled-components';
 
 export const GreenButton = ({text, animation}) => {
@@ -10,7 +10,7 @@ export const GreenButton = ({text, animation}) => {
 
     return (
         <Wrapper>
-            <Button
+            <SubmitButton
                 text={text}
                 animation={animation}
                 myStyle={`

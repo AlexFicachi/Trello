@@ -60,6 +60,15 @@ function App() {
 
   const [inputDisplaying, setInputDisplaying] = useState(false);
 
+  const addCard = (card, columnIdx) => {
+    let slicedState = state.slice();
+    slicedState[columnIdx].cards.push({
+      name: card,
+      id: v4(),
+      editCardInput: false,
+    });
+    setState(slicedState);
+  }
   const deleteColumn = (idx) => {
     setState(state.filter((col,i)=> i !== idx))
   }
@@ -99,6 +108,7 @@ function App() {
             toggleInputDisplaying,
             toggleEditCardInput,
             deleteCard,
+            addCard,
           }
         }}
       >

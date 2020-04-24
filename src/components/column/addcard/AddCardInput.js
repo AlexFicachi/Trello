@@ -2,11 +2,12 @@ import React from 'react'
 import styled from 'styled-components';
 import {Textarea} from '../../shared/Textarea';
 
-export const AddCardInput = () => {
+export const AddCardInput = ({bind}) => {
     return (
         <Wrapper>
             <Textarea
                 placeholder={"Enter a title for this card..."}
+                bind={bind}
             />
         </Wrapper>
     )
