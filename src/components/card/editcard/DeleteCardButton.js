@@ -7,8 +7,14 @@ export const DeleteCardButton = () => {
     const myContext = useContext(Context);
     const color = myContext.theme.color.deleteButton;
     const hover = myContext.theme.color.deleteButtonHover;
+    const {cardIndex} = myContext;
+    const {columnIndex} = myContext;
+    const {deleteCard} = myContext.functions;
+    console.log(myContext)
     return (
-        <Wrapper>
+        <Wrapper
+            onClick={()=>deleteCard(cardIndex, columnIndex)}
+        >
             <Button
                 text={'Delete'}
                 myStyle={`

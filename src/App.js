@@ -34,7 +34,7 @@ function App() {
       {
         name: 'Column Two',
         columnTitleInput: false,
-        addCardInput: true,
+        addCardInput: false,
         id: v4(),
         cards: [
           {
@@ -60,6 +60,30 @@ function App() {
 
   const [inputDisplaying, setInputDisplaying] = useState(false);
 
+  const deleteColumn = (idx) => {
+    setState(state.filter((col,i)=> i !== idx))
+  }
+  const deleteCard = (cardIdx, columnIdx) => {
+    const slicedState = state.slice();
+    slicedState[columnIdx].cards = slicedState[columnIdx].cards.filter((card,i)=>i!==cardIdx);
+    setState(slicedState)
+  }
+  const toggleAddCardInput = (idx) => {
+    const slicedState = state.slice();
+    slicedState[idx].addCardInput = !slicedState[idx].addCardInput;
+    setState(slicedState)
+  }
+  const toggleInputDisplaying = () => {
+    setInputDisplaying(!inputDisplaying)
+  }
+  const toggleEditCardInput = (cardIdx, columnIdx) => {
+    const slicedState = state.slice();
+    slicedState[columnIdx].cards[cardIdx].editCardInput = 
+    !slicedState[columnIdx].cards[cardIdx].editCardInput;
+    setState(slicedState)
+  }
+
+
   return (
     <div className="App">
       <Header/>
@@ -70,6 +94,11 @@ function App() {
           inputDisplaying,
           functions: {
             onDragEnd,
+            deleteColumn,
+            toggleAddCardInput,
+            toggleInputDisplaying,
+            toggleEditCardInput,
+            deleteCard,
           }
         }}
       >

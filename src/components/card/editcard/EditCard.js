@@ -1,13 +1,23 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
 import {EditCardInput} from './EditCardInput';
 import {SaveCardButton} from './SaveCardButton';
 import {DeleteCardButton} from './DeleteCardButton';
 import {Form} from '../../shared/Form';
+import {Context} from '../../../Context';
+
 export const EditCard = () => {
+    const myContext = useContext(Context);
+    const {toggleEditCardInput} = myContext.functions;
+    const {columnIndex} = myContext;
+    const {cardIndex} = myContext;
+    console.log(myContext);
+
     return (
         <>
-            <Background/>
+            <Background
+                onClick={()=>toggleEditCardInput(cardIndex,columnIndex)}
+            />
             <Wrapper>
                  <Form
                      input={<EditCardInput/>}

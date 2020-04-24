@@ -8,12 +8,14 @@ import {DragDropContext} from 'react-beautiful-dnd';
 
 export const Board = () => {
     const myContext = useContext(Context);
-    const columns = myContext.state.map(col=>{
+    const columns = myContext.state.map((col,i)=>{
         return (
             <Context.Provider
                 value={{
+                    functions: myContext.functions,
                     state: col,
-                    theme: myContext.theme
+                    theme: myContext.theme,
+                    columnIndex: i,
                 }}
                 key={col.id}
             >

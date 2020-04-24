@@ -10,8 +10,11 @@ export const ColumnMain = () => {
             <Context.Provider
                 value={{
                     state: card,
+                    columnState: myContext.state,
+                    columnIndex: myContext.columnIndex,
                     theme: myContext.theme,
                     cardIndex: i,
+                    functions: myContext.functions
                 }}
                 key={card.id}
             >

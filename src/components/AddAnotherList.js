@@ -1,11 +1,15 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components';
 import {ToggleInput} from './shared/ToggleInput';
+import {Context} from '../Context';
 
 export const AddAnotherList = () => {
-
+    const myContext = useContext(Context);
+    const {toggleInputDisplaying} = myContext.functions
     return (
-        <Wrapper>
+        <Wrapper
+            onClick={toggleInputDisplaying}
+        >
             <ToggleInput
                 text={'Add another list'}
                 myStyle={`

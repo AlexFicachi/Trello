@@ -5,14 +5,18 @@ import {Icon} from '../shared/Icon';
 import {Context} from '../../Context';
 
 export const CardIcon = () => {
-
     const myContext = useContext(Context);
-    const color = myContext.theme.color.columnText
+    const {columnText} = myContext.theme.color;
+    const {toggleEditCardInput} = myContext.functions;
+    const {cardIndex} = myContext;
+    const {columnIndex} = myContext;
 
     return (
-        <Wrapper>
+        <Wrapper
+            onClick={()=>toggleEditCardInput(cardIndex, columnIndex)}
+        >
             <Icon
-                icon={<GoPencil size={15} color={color}/>}
+                icon={<GoPencil size={15} color={columnText}/>}
             />
         </Wrapper>
     )

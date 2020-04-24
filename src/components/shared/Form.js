@@ -3,7 +3,9 @@ import styled from 'styled-components';
 
 export const Form = ({input, add, remove, buttonContainerStyle}) => {
     return (
-        <StyledForm>
+        <StyledForm
+            onSubmit={(e)=>e.preventDefault()}
+        >
             {input}
             <Buttons
                 myStyle={buttonContainerStyle}

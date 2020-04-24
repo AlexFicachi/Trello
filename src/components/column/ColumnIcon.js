@@ -6,16 +6,20 @@ import {Context} from '../../Context';
 
 export const ColumnIcon = () => {
     const myContext = useContext(Context);
-    const color = myContext.theme.color.columnText;
+    const {columnText} = myContext.theme.color;
+    const {deleteColumn} = myContext.functions;
+    const {columnIndex} = myContext;
 
     return (
         <Wrapper
             myStyle={`
                 & *{
-                    color: ${color};
+                    color: ${columnText};
                 }
             `}
+            onClick={()=>deleteColumn(columnIndex)}
         >
+
             <Icon
                 icon={<IoMdClose size={32}/>}
             />
