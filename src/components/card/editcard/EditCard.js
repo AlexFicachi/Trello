@@ -6,6 +6,7 @@ import {DeleteCardButton} from './DeleteCardButton';
 import {Form} from '../../shared/Form';
 import {Context} from '../../../Context';
 import {useInput} from '../../shared/useInput';
+import {OutsideClick} from '../../shared/OutsideClick';
 
 export const EditCard = () => {
     const myContext = useContext(Context);
@@ -14,22 +15,20 @@ export const EditCard = () => {
     const { columnIndex } = myContext;
     const { cardIndex } = myContext;
     const { name } = myContext.state;
-    console.log(myContext)
     const [bind, onSubmit] = useInput(name, editCard, columnIndex, cardIndex);
-
-    const handleSubmit = (e) => {
-        onSubmit(e);
-        toggleEditCardInput(cardIndex,columnIndex)
-    }
 
     return (
         <>
-            <Background
+            <OutsideClick
                 onClick={()=>toggleEditCardInput(cardIndex,columnIndex)}
+                myStyle={`
+                    background: rgba(0,0,0,0.5);
+                    z-index: 3;
+                `}
             />
             <Wrapper>
                  <Form
-                     onSubmit={handleSubmit}
+                     onSubmit={onSubmit}
                      input={<EditCardInput
                          bind={bind}
                      />}
@@ -38,6 +37,7 @@ export const EditCard = () => {
                      buttonContainerStyle={`
                         justify-content: space-around;
                      `}
+                     myStyle={``}
                  />
             </Wrapper>
         </>
@@ -48,15 +48,6 @@ const Wrapper = styled.div`
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 4;
 `
 
-const Background = styled.div`
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    background: rgba(0,0,0,0.5);
-    top: 0;
-    left: 0;
-    z-index: 1;
-`

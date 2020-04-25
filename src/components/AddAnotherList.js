@@ -33,4 +33,6 @@ const Wrapper = styled.div`
     &:hover{
         background: #5BA4D4;
     }
+    position: relative;
+    z-index: 2;
 `

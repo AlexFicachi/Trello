@@ -24,6 +24,8 @@ const Wrapper = styled.div`
     margin-bottom: 10px;
     white-space: normal;
     word-break: break-word;
+    position: relative;
+    z-index: 2;
 `
 
 export {ColumnTitle}

@@ -39,4 +39,6 @@ const Wrapper = styled.div`
         opacity: 1;
     }
     ${({myStyle})=>myStyle};
+    position: relative;
+    z-index: 2;
 `

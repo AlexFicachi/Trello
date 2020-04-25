@@ -1,10 +1,14 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import styled from 'styled-components';
 import {Context} from '../../Context'
 
 export const Input = ({value, placeholder, animation, bind}) => {
     const myContext = useContext(Context);
-    let color = myContext.theme.color.columnText;
+    const color = myContext.theme.color.columnText;
+    const inputRef = bind.ref;
+    useEffect(()=>{
+        inputRef.current.focus();
+    })
     return (
         <StyledInput 
             value={value}

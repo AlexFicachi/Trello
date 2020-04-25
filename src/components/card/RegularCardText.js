@@ -15,4 +15,5 @@ export const RegularCardText = () => {
 
 const Wrapper = styled.div`
     white-space: normal;
+    word-break: break-word;
 `

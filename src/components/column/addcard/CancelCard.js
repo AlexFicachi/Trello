@@ -18,5 +18,5 @@ export const CancelCard = () => {
 }
 
 const Wrapper = styled.div`
- 
+
 `

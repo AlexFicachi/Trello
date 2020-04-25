@@ -1,7 +1,8 @@
-import {useState} from 'react'
+import {useState, useRef} from 'react'
 
 export const useInput = (initialValue='', submitResult, columnIdx, cardIdx) => {
-    let [value, setValue] = useState(initialValue);
+    const [value, setValue] = useState(initialValue);
+    const myRef = useRef();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,8 +27,9 @@ export const useInput = (initialValue='', submitResult, columnIdx, cardIdx) => {
 
     const bind = {
         value,
-        onChange: handleChange
+        onChange: handleChange,
+        ref:myRef,
     }
 
-    return [bind, handleSubmit];
+    return [bind, handleSubmit, myRef];
 }

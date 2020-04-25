@@ -12,6 +12,8 @@ export const ToggleInput = ({text, myStyle}) => {
 }
 
 const Wrapper = styled.div`
+    position: relative;
+    z-index: 2;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 3px;

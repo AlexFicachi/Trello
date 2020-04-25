@@ -44,4 +44,5 @@ const Wrapper = styled.div`
             display: flex;
         }
     }
+    z-index: 2;
 `

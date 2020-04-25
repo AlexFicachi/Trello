@@ -25,4 +25,6 @@ const Wrapper = styled.div`
         background: lightgray;
         border-radius: 3px;
     }
+    position: relative;
+    z-index: 2;
 `

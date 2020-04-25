@@ -28,7 +28,8 @@ const Wrapper = styled.div`
     &:hover {
         opacity: 1;
     }
-    ${({myStyle})=>myStyle};
+
+    ${({myStyle})=>myStyle}
 `
 
 
