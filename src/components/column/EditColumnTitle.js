@@ -11,7 +11,6 @@ export const EditColumnTitle = () => {
     const { editList } = myContext.functions;
     const { columnIndex } = myContext;
     const { cardIndex } = myContext;
-    const { toggleEditColumnInput } = myContext.functions;
     const [bind, onSubmit] = useInput(value, editList, columnIndex, cardIndex);
 
     return (

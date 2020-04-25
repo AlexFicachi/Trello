@@ -12,7 +12,6 @@ import {OutsideClick} from '../shared/OutsideClick';
 export const AddListForm = () => {
     const myContext = useContext(Context);
     const { addList } = myContext.functions;
-    const { toggleInputDisplaying } = myContext.functions;
 
     const [bind, onSubmit] = useInput('', addList);
 

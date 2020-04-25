@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState, useContext} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import styled from 'styled-components';
 import {Context} from '../../Context';
 
@@ -11,8 +11,9 @@ export const Textarea = ({value, placeholder, wrapperStyle, myStyle, bind}) => {
     useEffect(()=>{
         textareaRef.current.focus();
         textareaRef.current.select();
-    },[])
+    },[textareaRef])
     useEffect(()=>{
+        console.log('test')
         setScrollHeight(textareaRef.current.scrollHeight)
     })
  

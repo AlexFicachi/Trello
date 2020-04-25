@@ -6,8 +6,10 @@ export const useInput = (initialValue='', submitResult, columnIdx, cardIdx) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        submitResult(value, columnIdx, cardIdx);
-        setValue(initialValue);
+        if (value.trim()){
+            submitResult(value, columnIdx, cardIdx);
+            setValue(initialValue);
+        }
     }
     
     const enterPressed = (e) => {
@@ -17,10 +19,8 @@ export const useInput = (initialValue='', submitResult, columnIdx, cardIdx) => {
 
     const handleChange = (e) => {
         if (enterPressed(e)){
-            console.log('enter pressed');
             handleSubmit(e);
         } else {
-            console.log('value pressed');
             setValue(e.target.value);
         }
     }

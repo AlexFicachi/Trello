@@ -56,7 +56,7 @@ function App() {
       },
     ],
   )
-  console.log(state)
+
   const [onDragEnd] = useDragnDrop(state, setState);
 
   const [inputDisplaying, setInputDisplaying] = useState(false);
@@ -128,10 +128,17 @@ function App() {
       }
       return col;
     })
+    setInputDisplaying(false);
     setState(slicedState)
   }
   const toggleInputDisplaying = () => {
     setInputDisplaying(!inputDisplaying)
+    let slicedState = state.slice()
+    slicedState = slicedState.map((col)=>{
+      col.addCardInput = false;
+      return col;
+    })
+    setState(slicedState)
   }
   const toggleEditCardInput = (cardIdx, columnIdx) => {
     const slicedState = state.slice();
