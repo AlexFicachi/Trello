@@ -4,7 +4,6 @@ import {AddListInput} from './AddListInput';
 import {AddListButton} from './AddListButton'
 import {AddListCancel} from './AddListCancel'
 import {Form} from '../shared/Form'
-import {Animation} from './Animation'
 import {useInput} from '../shared/useInput';
 import {Context} from '../../Context';
 import {OutsideClick} from '../shared/OutsideClick';
@@ -39,8 +38,8 @@ const Wrapper = styled.div`
     width: 272px;
     padding: 4px;
     border-radius: 3px;
-    ${Animation('80px', 'form')}
     position: relative;
     z-index: 2;
+    height: 80px;
 `
 // height: 80px; <-- add back to Wrapper

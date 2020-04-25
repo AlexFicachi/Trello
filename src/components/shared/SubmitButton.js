@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const SubmitButton = ({text, animation, myStyle}) => {
+export const SubmitButton = ({text, myStyle}) => {
     return (
         <Btn 
-            animation={animation}
             myStyle={myStyle}
             value={text}
             type={'submit'}
@@ -25,6 +24,5 @@ const Btn = styled.input`
     font-size: 1em;
     border-radius: 3px;
     cursor: pointer;
-    ${({animation})=>animation && animation('32px','add')}
-    ${({myStyle})=>myStyle}
+    ${({myStyle})=>myStyle};
 `

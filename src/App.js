@@ -62,7 +62,6 @@ function App() {
   const [inputDisplaying, setInputDisplaying] = useState(false);
 
   const closeAllInputs = () => {
-    console.log('clicked')
     setInputDisplaying(false);
     let slicedState = state.slice();
     slicedState = slicedState.map(col=>{
@@ -114,7 +113,7 @@ function App() {
     const slicedState = state.slice();
     slicedState[columnIdx].name = value;
     setState(slicedState);
-    toggleEditColumnInput(columnIdx)
+    closeAllInputs();
   }
   const toggleAddCardInput = (idx) => {
     let slicedState = state.slice();
@@ -129,9 +128,10 @@ function App() {
       return col;
     })
     setInputDisplaying(false);
-    setState(slicedState)
+    setState(slicedState);
   }
   const toggleInputDisplaying = () => {
+    closeAllInputs();
     setInputDisplaying(!inputDisplaying)
     let slicedState = state.slice()
     slicedState = slicedState.map((col)=>{
@@ -146,19 +146,12 @@ function App() {
     !slicedState[columnIdx].cards[cardIdx].editCardInput;
     setState(slicedState)
   }
+
   const toggleEditColumnInput = (columnIdx) => {
+    closeAllInputs();
     let slicedState = state.slice();
     // toggle input
     slicedState[columnIdx].columnTitleInput = !slicedState[columnIdx].columnTitleInput;
-
-    // close all other title inputs
-    slicedState = slicedState.map((col, i)=>{
-      if (i !== columnIdx){
-        col.columnTitleInput = false;
-      }
-      return col;
-    })
-
     setState(slicedState);
   }
 

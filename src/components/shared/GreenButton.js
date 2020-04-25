@@ -3,7 +3,7 @@ import {Context} from '../../Context';
 import {SubmitButton} from './SubmitButton';
 import styled from 'styled-components';
 
-export const GreenButton = ({text, animation}) => {
+export const GreenButton = ({text}) => {
     const myContext = useContext(Context);
     const color = myContext.theme.color.addButton;
     const hover = myContext.theme.color.addButtonHover;
@@ -12,7 +12,6 @@ export const GreenButton = ({text, animation}) => {
         <Wrapper>
             <SubmitButton
                 text={text}
-                animation={animation}
                 myStyle={`
                     background: ${color};
                     padding-left: 10px;

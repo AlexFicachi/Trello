@@ -13,7 +13,6 @@ export const Textarea = ({value, placeholder, wrapperStyle, myStyle, bind}) => {
         textareaRef.current.select();
     },[textareaRef])
     useEffect(()=>{
-        console.log('test')
         setScrollHeight(textareaRef.current.scrollHeight)
     })
  

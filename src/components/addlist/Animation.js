@@ -1,4 +1,4 @@
-const Animation = (height, name) => {
+/*const Animation = (height, name) => {
     return `
     @keyframes ${name}{
         0%{
@@ -17,4 +17,4 @@ const Animation = (height, name) => {
     `
 }
 
-export {Animation}
+export {Animation}*/

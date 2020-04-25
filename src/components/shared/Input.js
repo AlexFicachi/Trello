@@ -2,7 +2,7 @@ import React, {useContext, useEffect} from 'react'
 import styled from 'styled-components';
 import {Context} from '../../Context'
 
-export const Input = ({value, placeholder, animation, bind}) => {
+export const Input = ({value, placeholder, bind}) => {
     const myContext = useContext(Context);
     const color = myContext.theme.color.columnText;
     const inputRef = bind.ref;
@@ -13,7 +13,6 @@ export const Input = ({value, placeholder, animation, bind}) => {
         <StyledInput 
             value={value}
             placeholder={placeholder}
-            animation={animation}
             myStyle={`
                 color: ${color};
             `}
@@ -25,7 +24,7 @@ export const Input = ({value, placeholder, animation, bind}) => {
 const StyledInput = styled.input`
     margin-top: 1px;
     width: 100%;
-    height: 0px;
+    height: 36px;
     font-size: 1em;
     border-color: rgb(0,121,191);
     border-style: solid;
@@ -34,6 +33,5 @@ const StyledInput = styled.input`
     padding-bottom: 4px;
     font-weight: 500;
     ${({myStyle})=>myStyle};
-    ${({animation})=>animation('36px', 'input')}
 `
 

@@ -1,9 +1,9 @@
-import {useState, useRef} from 'react'
+import {useState, useRef, useContext} from 'react'
+import {Context} from '../../Context';
 
 export const useInput = (initialValue='', submitResult, columnIdx, cardIdx) => {
     const [value, setValue] = useState(initialValue);
     const myRef = useRef();
-
     const handleSubmit = (e) => {
         e.preventDefault();
         if (value.trim()){
