@@ -3,19 +3,25 @@ import styled from 'styled-components';
 import {Textarea} from '../shared/Textarea';
 import {Context} from '../../Context';
 import {useInput} from '../shared/useInput';
+import {OutsideClick} from '../shared/OutsideClick';
 
 export const EditColumnTitle = () => {
     const myContext = useContext(Context);
     const value = myContext.state.name;
     const { editList } = myContext.functions;
     const { columnIndex } = myContext;
-    const { cardIndex } = myContext
+    const { cardIndex } = myContext;
+    const { toggleEditColumnInput } = myContext.functions;
     const [bind, onSubmit] = useInput(value, editList, columnIndex, cardIndex);
 
     return (
         <Wrapper>
+            <OutsideClick
+                myStyle={``}
+            />
             <form
                 onSubmit={onSubmit}
+                style={{position: 'relative',zIndex: '2'}}
             >
                 <Textarea
                     value={value}
@@ -40,3 +46,5 @@ const Wrapper = styled.div`
     border-radius: 3px;
     margin-bottom: 3px;
 `
+
+// z-index

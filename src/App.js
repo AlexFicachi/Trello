@@ -56,13 +56,25 @@ function App() {
       },
     ],
   )
+  console.log(state)
   const [onDragEnd] = useDragnDrop(state, setState);
 
   const [inputDisplaying, setInputDisplaying] = useState(false);
 
-  const closeAllOtherInputs = () => {
+  const closeAllInputs = () => {
+    console.log('clicked')
     setInputDisplaying(false);
-
+    let slicedState = state.slice();
+    slicedState = slicedState.map(col=>{
+      col.cards = col.cards.map(card=>{
+        card.editCardInput = false;
+        return card;
+      })
+      col.columnTitleInput = false;
+      col.addCardInput = false;
+      return col;
+    })
+    setState(slicedState)
   }
   const addList = (value) => {
     const slicedState = state.slice();
@@ -164,6 +176,7 @@ function App() {
             addList,
             editCard,
             editList,
+            closeAllInputs,
           }
         }}
       >

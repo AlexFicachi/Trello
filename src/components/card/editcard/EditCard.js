@@ -20,7 +20,6 @@ export const EditCard = () => {
     return (
         <>
             <OutsideClick
-                onClick={()=>toggleEditCardInput(cardIndex,columnIndex)}
                 myStyle={`
                     background: rgba(0,0,0,0.5);
                     z-index: 3;

@@ -22,7 +22,6 @@ export const AddCardForm = () => {
                 myStyle={`
                     z-index: 1;
                 `}
-                onClick={()=>toggleAddCardInput(columnIndex)}
             />
             <Form
                 onSubmit={onSubmit}
