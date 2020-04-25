@@ -13,7 +13,7 @@ export const RegularCard = () => {
             draggableId={myContext.state.id}
             index={myContext.cardIndex}
         >
-            {(provided)=>
+            {(provided)=> 
                 <Wrapper
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}

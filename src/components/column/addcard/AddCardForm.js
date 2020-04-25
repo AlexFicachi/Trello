@@ -12,7 +12,7 @@ export const AddCardForm = () => {
     const { addCard } = myContext.functions;
     const { columnIndex } = myContext;
 
-    const [value, bind, onSubmit] = useInput('', addCard, columnIndex);
+    const [bind, onSubmit] = useInput('', addCard, columnIndex);
     
     return (
         <Wrapper>

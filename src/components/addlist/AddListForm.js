@@ -1,18 +1,28 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components';
 import {AddListInput} from './AddListInput';
 import {AddListButton} from './AddListButton'
 import {AddListCancel} from './AddListCancel'
 import {Form} from '../shared/Form'
 import {Animation} from './Animation'
+import {useInput} from '../shared/useInput';
+import {Context} from '../../Context';
 
 export const AddListForm = () => {
+    const myContext = useContext(Context);
+    const { addList } = myContext.functions;
+
+    const [bind, onSubmit] = useInput('', addList);
+
     return (
         <Wrapper>
             <Form
-                input={<AddListInput/>}
+                input={<AddListInput
+                    bind={bind}
+                />}
                 add={<AddListButton/>}
                 remove={<AddListCancel/>}
+                onSubmit={onSubmit}
             />
         </Wrapper>
     )

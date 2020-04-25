@@ -3,11 +3,13 @@ import {Context} from '../../Context';
 import styled from 'styled-components';
 
 const ColumnTitle = () => {
-
     const myContext = useContext(Context);
-
+    const { toggleEditColumnInput } = myContext.functions;
+    const { columnIndex } = myContext;
     return (
-        <Wrapper>
+        <Wrapper
+            onClick={()=>toggleEditColumnInput(columnIndex)}
+        >
             {myContext.state.name}
         </Wrapper>
     )

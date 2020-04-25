@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Textarea} from '../../shared/Textarea'
 import {Context} from '../../../Context';
 
-export const EditCardInput = () => {
+export const EditCardInput = ({bind}) => {
     const myContext = useContext(Context);
     const value = myContext.state.name;
     return (
@@ -13,6 +13,7 @@ export const EditCardInput = () => {
                 wrapperStyle={`
                     padding-left: 8px
                 `}
+                bind={bind}
             />
         </Wrapper>
     )

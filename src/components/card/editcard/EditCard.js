@@ -5,13 +5,22 @@ import {SaveCardButton} from './SaveCardButton';
 import {DeleteCardButton} from './DeleteCardButton';
 import {Form} from '../../shared/Form';
 import {Context} from '../../../Context';
+import {useInput} from '../../shared/useInput';
 
 export const EditCard = () => {
     const myContext = useContext(Context);
-    const {toggleEditCardInput} = myContext.functions;
-    const {columnIndex} = myContext;
-    const {cardIndex} = myContext;
-    console.log(myContext);
+    const { toggleEditCardInput } = myContext.functions;
+    const { editCard } = myContext.functions
+    const { columnIndex } = myContext;
+    const { cardIndex } = myContext;
+    const { name } = myContext.state;
+    console.log(myContext)
+    const [bind, onSubmit] = useInput(name, editCard, columnIndex, cardIndex);
+
+    const handleSubmit = (e) => {
+        onSubmit(e);
+        toggleEditCardInput(cardIndex,columnIndex)
+    }
 
     return (
         <>
@@ -20,7 +29,10 @@ export const EditCard = () => {
             />
             <Wrapper>
                  <Form
-                     input={<EditCardInput/>}
+                     onSubmit={handleSubmit}
+                     input={<EditCardInput
+                         bind={bind}
+                     />}
                      add={<SaveCardButton/>}
                      remove={<DeleteCardButton/>}
                      buttonContainerStyle={`

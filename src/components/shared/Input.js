@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import styled from 'styled-components';
 import {Context} from '../../Context'
 
-export const Input = ({value, placeholder, animation}) => {
+export const Input = ({value, placeholder, animation, bind}) => {
     const myContext = useContext(Context);
     let color = myContext.theme.color.columnText;
     return (
@@ -13,6 +13,7 @@ export const Input = ({value, placeholder, animation}) => {
             myStyle={`
                 color: ${color};
             `}
+            {...bind}
         />
     )
 }

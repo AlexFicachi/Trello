@@ -60,6 +60,17 @@ function App() {
 
   const [inputDisplaying, setInputDisplaying] = useState(false);
 
+  const addList = (value) => {
+    const slicedState = state.slice();
+    slicedState.push({
+      name: value,
+      columnTitleInput: false,
+      addCardInput: false,
+      id: v4(),
+      cards: [],
+    });
+    setState(slicedState)
+  }
   const addCard = (card, columnIdx) => {
     let slicedState = state.slice();
     slicedState[columnIdx].cards.push({
@@ -77,6 +88,18 @@ function App() {
     slicedState[columnIdx].cards = slicedState[columnIdx].cards.filter((card,i)=>i!==cardIdx);
     setState(slicedState)
   }
+  const editCard = (value, columnIdx, cardIdx) => {
+    const slicedState = state.slice();
+    slicedState[columnIdx].cards[cardIdx].name = value;
+    setState(slicedState);
+    toggleEditCardInput(cardIdx, columnIdx)
+  }
+  const editList = (value, columnIdx) => {
+    const slicedState = state.slice();
+    slicedState[columnIdx].name = value;
+    setState(slicedState);
+    toggleEditColumnInput(columnIdx)
+  }
   const toggleAddCardInput = (idx) => {
     const slicedState = state.slice();
     slicedState[idx].addCardInput = !slicedState[idx].addCardInput;
@@ -91,6 +114,11 @@ function App() {
     !slicedState[columnIdx].cards[cardIdx].editCardInput;
     setState(slicedState)
   }
+  const toggleEditColumnInput = (columnIdx) => {
+    const slicedState = state.slice();
+    slicedState[columnIdx].columnTitleInput = !slicedState[columnIdx].columnTitleInput;
+    setState(slicedState);
+  }
 
 
   return (
@@ -103,12 +131,16 @@ function App() {
           inputDisplaying,
           functions: {
             onDragEnd,
-            deleteColumn,
             toggleAddCardInput,
             toggleInputDisplaying,
             toggleEditCardInput,
+            toggleEditColumnInput,
+            deleteColumn,
             deleteCard,
             addCard,
+            addList,
+            editCard,
+            editList,
           }
         }}
       >
