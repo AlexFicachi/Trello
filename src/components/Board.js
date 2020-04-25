@@ -47,9 +47,10 @@ const Wrapper = styled.div`
     height: 100%;
     background: rgb(0,121,191);
     white-space: nowrap;
-    margin-top: 80px;
-    padding: 8px;
+    padding-top: 88px;
+    padding-left: 8px;
     display: flex;
     align-items: flex-start;
+    overflow-y: scroll;
     ${({myStyle})=>myStyle}
 `

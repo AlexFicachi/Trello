@@ -21,4 +21,5 @@ const Head = styled.div`
     font-family: cursive;
     background: rgb(0,103,163);
     border: 2px solid black;
+    z-index: 5;
 `
