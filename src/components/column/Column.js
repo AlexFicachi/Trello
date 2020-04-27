@@ -2,7 +2,6 @@ import React, {useContext} from 'react';
 import styled from 'styled-components';
 import {ColumnHeader} from './ColumnHeader';
 import {ColumnBody} from './columnbody/ColumnBody';
-import {ColumnFoot} from './ColumnFoot';
 import {Context} from '../../Context';
 
 export const Column = () => {
@@ -18,7 +17,6 @@ export const Column = () => {
         >
             <ColumnHeader/>
             <ColumnBody/>
-            <ColumnFoot/>
         </Wrapper>
     )
 }

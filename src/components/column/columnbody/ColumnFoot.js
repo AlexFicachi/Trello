@@ -1,8 +1,8 @@
 import React, {useContext} from 'react'
 import styled from 'styled-components';
-import {AddAnotherCard} from './AddAnotherCard';
-import {AddCardForm} from './addcard/AddCardForm'
-import {Context} from '../../Context';
+import {AddAnotherCard} from '../AddAnotherCard';
+import {AddCardForm} from '../addcard/AddCardForm'
+import {Context} from '../../../Context';
 
 export const ColumnFoot = () => {
     const myContext = useContext(Context);
