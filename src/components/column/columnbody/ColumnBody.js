@@ -11,14 +11,18 @@ export const ColumnBody = () => {
             droppableId={myContext.state.id}
         >
             {(provided)=>
-                <div
+                <Wrapper
                     ref={provided.innerRef}
                     {...provided.droppableProps}
                 >
                     <ColumnCards/>
                     {provided.placeholder}
-                </div>
+                </Wrapper>
             }
         </Droppable>
     )
 };
+
+const Wrapper = styled.div`
+
+`
