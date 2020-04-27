@@ -158,7 +158,6 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
       <Context.Provider 
         value={{
           state: state,
@@ -180,6 +179,7 @@ function App() {
           }
         }}
       >
+        <Header/>
         <Board/>
       </Context.Provider>
     </div>
@@ -188,6 +188,7 @@ function App() {
 
 const theme = {
   color: {
+      header: 'linear-gradient(-45deg, #0067A3,#3498db)',
       columnText: '#2c3e50', // midnight blue
       columnTextLight: '#7f8c8d', // gray
       addButton: '#27ae60', // green

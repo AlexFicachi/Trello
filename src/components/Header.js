@@ -4,11 +4,11 @@ import { Context } from '../Context';
 
 export const Header = () => {
     const myContext = useContext(Context);
-    // const { header } = myContext.theme.color;
+    const { header } = myContext.theme.color;
     return (
         <Head
             myStyle={`
-                background: ${/*header*/null};
+                background: ${header};
             `}
         >
             <Logo>Trello</Logo>
