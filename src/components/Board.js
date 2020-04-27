@@ -51,6 +51,5 @@ const Wrapper = styled.div`
     padding-left: 8px;
     display: flex;
     align-items: flex-start;
-    overflow-y: scroll;
     ${({myStyle})=>myStyle}
 `

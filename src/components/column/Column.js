@@ -1,10 +1,9 @@
 import React, {useContext} from 'react';
 import styled from 'styled-components';
 import {ColumnHeader} from './ColumnHeader';
-import {ColumnMain} from './ColumnMain';
+import {ColumnBody} from './columnbody/ColumnBody';
 import {ColumnFoot} from './ColumnFoot';
 import {Context} from '../../Context';
-import {Droppable} from 'react-beautiful-dnd';
 
 export const Column = () => {
     const myContext = useContext(Context);
@@ -18,20 +17,8 @@ export const Column = () => {
             `}
         >
             <ColumnHeader/>
-            <Droppable
-                droppableId={myContext.state.id}
-            >
-                {(provided)=>
-                    <div
-                        ref={provided.innerRef}
-                        {...provided.droppableProps}
-                    >
-                        <ColumnMain/>
-                        {provided.placeholder}
-                        <ColumnFoot/>
-                    </div>
-                }
-            </Droppable>
+            <ColumnBody/>
+            <ColumnFoot/>
         </Wrapper>
     )
 }

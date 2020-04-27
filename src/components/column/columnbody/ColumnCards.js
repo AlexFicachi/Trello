@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
-import {Context} from '../../Context';
+import {Context} from '../../../Context';
 import styled from 'styled-components';
-import {Card} from '../card/Card';
+import {Card} from '../../card/Card';
 
-export const ColumnMain = () => {
+export const ColumnCards = () => {
     const myContext = useContext(Context);
     const { boardRef } = myContext;
     const cards = myContext.state.cards.map((card,i)=>{
