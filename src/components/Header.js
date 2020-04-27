@@ -1,25 +1,41 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components';
+import { Context } from '../Context';
 
 export const Header = () => {
+    const myContext = useContext(Context);
+    // const { header } = myContext.theme.color;
     return (
-        <Head>Trello</Head>
+        <Head
+            myStyle={`
+                background: ${/*header*/null};
+            `}
+        >
+            <Logo>Trello</Logo>
+            <Text>Made by Alejandro (Alex) Ficachi 04/25/2020</Text>
+        </Head>
     );
 }
 
 const Head = styled.div`
     position: fixed;
     top: 0;
-    font-weight: bold;
     height: 80px;
     display: flex;
     width: 100%;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    font-weight: 900;
-    color: lightgray;
-    font-family: cursive;
-    background: rgb(0,103,163);
-    border: 2px solid black;
     z-index: 5;
+    flex-direction: column;
+    box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.5);
+    ${({myStyle})=>myStyle}
+`
+const Text = styled.div`
+    color: white;
+`
+
+const Logo = styled.div`
+    font-weight: 900;
+    font-family: cursive;
+    color: lightgray;
 `
