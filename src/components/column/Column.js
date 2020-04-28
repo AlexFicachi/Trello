@@ -23,6 +23,7 @@ export const Column = () => {
 
 const Wrapper = styled.div`
     flex-basis: 272px;
+    max-width: 272px;
     background: rgb(235,236,240);
     border-radius: 3px;
     display: inline-flex;

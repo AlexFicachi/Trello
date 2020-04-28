@@ -4,9 +4,13 @@ import {ColumnCards} from './ColumnCards';
 import {Droppable} from 'react-beautiful-dnd';
 import {Context} from '../../../Context';
 import {ColumnFoot} from './ColumnFoot';
+import {AddCardForm} from '../addcard/AddCardForm'
 
 export const ColumnBody = () => {
     const myContext = useContext(Context);
+    const { addCardInput } = myContext.state;
+    const columnFoot = !addCardInput && <ColumnFoot/>
+    const addCardForm = addCardInput && <AddCardForm/>
     return (
         <Droppable
             droppableId={myContext.state.id}
@@ -20,9 +24,10 @@ export const ColumnBody = () => {
                         <Scroll>
                             <ColumnCards/>
                             {provided.placeholder}
+                            {addCardForm}
                         </Scroll>
-                        <ColumnFoot/>
                     </Wrapper>
+                        {columnFoot}
                 </React.Fragment>
             }
         </Droppable>
@@ -30,11 +35,11 @@ export const ColumnBody = () => {
 };
 
 const Scroll = styled.div`
-    overflow-y: scroll;
+    
 `
 
 const Wrapper = styled.div`
     display: flex;
-    flex-direction: column;
-    overflow-y: hidden;
+    flex-direction: column-reverse;
+    overflow-y: auto;
 `
