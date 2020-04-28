@@ -17,16 +17,24 @@ export const ColumnBody = () => {
                         ref={provided.innerRef}
                         {...provided.droppableProps}
                     >
-                        <ColumnCards/>
-                        {provided.placeholder}
+                        <Scroll>
+                            <ColumnCards/>
+                            {provided.placeholder}
+                        </Scroll>
+                        <ColumnFoot/>
                     </Wrapper>
-                    <ColumnFoot/>
                 </React.Fragment>
             }
         </Droppable>
     )
 };
 
-const Wrapper = styled.div`
+const Scroll = styled.div`
     overflow-y: scroll;
+`
+
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
 `
