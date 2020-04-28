@@ -19,7 +19,7 @@ export const ColumnHeader = () => {
 }
 
 const Wrapper = styled.div`
-    min-height: 35px;
+    flex-basis: 35px;
     display: grid;
     align-items: flex-start;
     grid-template-columns: 88% 12%;
