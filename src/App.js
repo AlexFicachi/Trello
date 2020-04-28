@@ -28,6 +28,76 @@ function App() {
             name: 'card two',
             id: v4(),
             editCardInput: false,
+          },
+          {
+            name: 'card two',
+            id: v4(),
+            editCardInput: false,
+          },
+          {
+            name: 'card two',
+            id: v4(),
+            editCardInput: false,
+          },
+          {
+            name: 'card two',
+            id: v4(),
+            editCardInput: false,
+          },
+          {
+            name: 'card two',
+            id: v4(),
+            editCardInput: false,
+          },
+          {
+            name: 'card two',
+            id: v4(),
+            editCardInput: false,
+          },
+          {
+            name: 'card two',
+            id: v4(),
+            editCardInput: false,
+          },
+          {
+            name: 'card two',
+            id: v4(),
+            editCardInput: false,
+          },
+          {
+            name: 'card two',
+            id: v4(),
+            editCardInput: false,
+          },
+          {
+            name: 'card two',
+            id: v4(),
+            editCardInput: false,
+          },
+          {
+            name: 'card two',
+            id: v4(),
+            editCardInput: false,
+          },
+          {
+            name: 'card two',
+            id: v4(),
+            editCardInput: false,
+          },
+          {
+            name: 'card two',
+            id: v4(),
+            editCardInput: false,
+          },
+          {
+            name: 'card two',
+            id: v4(),
+            editCardInput: false,
+          },
+          {
+            name: 'card two',
+            id: v4(),
+            editCardInput: false,
           }
         ],
       },

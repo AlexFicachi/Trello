@@ -12,19 +12,21 @@ export const ColumnBody = () => {
             droppableId={myContext.state.id}
         >
             {(provided)=>
-                <Wrapper
-                    ref={provided.innerRef}
-                    {...provided.droppableProps}
-                >
-                    <ColumnCards/>
-                    {provided.placeholder}
+                <React.Fragment>
+                    <Wrapper
+                        ref={provided.innerRef}
+                        {...provided.droppableProps}
+                    >
+                        <ColumnCards/>
+                        {provided.placeholder}
+                    </Wrapper>
                     <ColumnFoot/>
-                </Wrapper>
+                </React.Fragment>
             }
         </Droppable>
     )
 };
 
 const Wrapper = styled.div`
-
+    overflow-y: scroll;
 `

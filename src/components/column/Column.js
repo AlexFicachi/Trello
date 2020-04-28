@@ -22,11 +22,11 @@ export const Column = () => {
 }
 
 const Wrapper = styled.div`
-    min-width: 272px;
-    width: 1px;
+    flex-basis: 272px;
     background: rgb(235,236,240);
     border-radius: 3px;
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
     margin-right: 8px;
     padding: 5px;
     padding-right: 8px;
@@ -34,5 +34,6 @@ const Wrapper = styled.div`
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 100px;
+    max-height: 100%;
     ${({myStyle})=>myStyle}
 `

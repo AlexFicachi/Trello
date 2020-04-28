@@ -49,6 +49,7 @@ const Wrapper = styled.div`
     white-space: nowrap;
     padding-top: 88px;
     padding-left: 8px;
+    padding-bottom: 24px;
     display: flex;
     align-items: flex-start;
     ${({myStyle})=>myStyle}
