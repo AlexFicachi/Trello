@@ -20,13 +20,15 @@ export const ColumnBody = () => {
                     <Wrapper
                         ref={provided.innerRef}
                         {...provided.droppableProps}
-                    >
-                        <Scroll>
-                            {provided.placeholder}
+                    >  
+                        <Cards>
                             <ColumnCards/>
                             {addCardForm}
-                        </Scroll>
-                        {columnFoot}
+                        </Cards>
+                            {provided.placeholder}
+                        <Footer>
+                            {columnFoot}
+                        </Footer>   
                     </Wrapper>
                 </React.Fragment>
             }
@@ -34,12 +36,12 @@ export const ColumnBody = () => {
     )
 };
 
-const Scroll = styled.div`
-    flex-direction: column-reverse;
-    display: flex;
-
-`
-
 const Wrapper = styled.div` 
-    overflow-y: auto;
+     overflow-y: auto;
+`
+const Footer = styled.div`
+`
+const Cards = styled.div`
+    display: flex;
+    flex-direction: column;
 `
