@@ -15,19 +15,19 @@ export const ColumnBody = () => {
         <Droppable
             droppableId={myContext.state.id}
         >
-            {(provided)=>
+            {(provided, snapshot)=>
                 <React.Fragment>
                     <Wrapper
                         ref={provided.innerRef}
                         {...provided.droppableProps}
                     >
                         <Scroll>
-                            <ColumnCards/>
                             {provided.placeholder}
+                            <ColumnCards/>
                             {addCardForm}
                         </Scroll>
-                    </Wrapper>
                         {columnFoot}
+                    </Wrapper>
                 </React.Fragment>
             }
         </Droppable>
@@ -35,11 +35,11 @@ export const ColumnBody = () => {
 };
 
 const Scroll = styled.div`
-    
+    flex-direction: column-reverse;
+    display: flex;
+
 `
 
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column-reverse;
+const Wrapper = styled.div` 
     overflow-y: auto;
 `
