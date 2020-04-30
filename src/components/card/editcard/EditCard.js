@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {EditCardInput} from './EditCardInput';
 import {SaveCardButton} from './SaveCardButton';
@@ -17,15 +17,18 @@ export const EditCard = () => {
     const { name } = myContext.state;
     const [bind, onSubmit] = useInput(name, editCard, columnIndex, cardIndex);
 
+
     return (
         <>
             <OutsideClick
                 myStyle={`
                     background: rgba(0,0,0,0.5);
-                    z-index: 3;
+                    z-index: 4;
                 `}
             />
-            <Wrapper>
+            <Wrapper
+                myStyle={``}
+            >
                  <Form
                      onSubmit={onSubmit}
                      input={<EditCardInput
@@ -47,6 +50,8 @@ const Wrapper = styled.div`
     position: absolute;
     top: 0;
     width: 100%;
+    height: 1px;
     z-index: 4;
+    ${({myStyle})=>myStyle}
 `
 

@@ -35,6 +35,5 @@ const Wrapper = styled.div`
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 100px;
-    max-height: 100%;
     ${({myStyle})=>myStyle}
 `

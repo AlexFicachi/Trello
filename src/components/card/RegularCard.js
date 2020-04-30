@@ -27,6 +27,8 @@ export const RegularCard = () => {
     )
 }
 
+
+
 const Wrapper = styled.div`
     position: relative;
     background: white;

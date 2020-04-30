@@ -10,7 +10,6 @@ export const DeleteCardButton = () => {
     const {cardIndex} = myContext;
     const {columnIndex} = myContext;
     const {deleteCard} = myContext.functions;
-    console.log(myContext)
     return (
         <Wrapper
             onClick={()=>deleteCard(cardIndex, columnIndex)}

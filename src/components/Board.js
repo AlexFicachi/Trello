@@ -45,7 +45,6 @@ export const Board = () => {
 const Wrapper = styled.div`
     font-size: 14px;
     height: 100%;
-    background: rgb(0,121,191);
     white-space: nowrap;
     padding-top: 88px;
     padding-left: 8px;

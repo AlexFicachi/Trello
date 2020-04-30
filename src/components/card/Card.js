@@ -5,7 +5,6 @@ import {EditCard} from './editcard/EditCard';
 import {Context} from '../../Context';
 
 const Card = () => {
-
     const myContext = useContext(Context)
     return (
         <Wrapper>

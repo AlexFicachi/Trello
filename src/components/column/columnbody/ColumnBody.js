@@ -23,10 +23,10 @@ export const ColumnBody = () => {
                     >  
                         <Cards>
                             <ColumnCards/>
-                            {addCardForm}
                         </Cards>
                             {provided.placeholder}
                         <Footer>
+                            {addCardForm}
                             {columnFoot}
                         </Footer>   
                     </Wrapper>
@@ -37,11 +37,11 @@ export const ColumnBody = () => {
 };
 
 const Wrapper = styled.div` 
-     overflow-y: auto;
+
+    
 `
 const Footer = styled.div`
 `
 const Cards = styled.div`
-    display: flex;
-    flex-direction: column;
+
 `
