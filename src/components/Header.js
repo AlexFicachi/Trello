@@ -12,7 +12,7 @@ export const Header = () => {
             `}
         >
             <Logo>Trello</Logo>
-            <Text>Made by Alejandro (Alex) Ficachi 04/25/2020</Text>
+            <Text>Made by Alejandro (Alex) Ficachi 04/30/2020</Text>
         </Head>
     );
 }

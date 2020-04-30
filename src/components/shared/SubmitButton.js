@@ -25,4 +25,5 @@ const Btn = styled.input`
     border-radius: 3px;
     cursor: pointer;
     ${({myStyle})=>myStyle};
+    -webkit-appearance: none;
 `

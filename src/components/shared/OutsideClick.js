@@ -17,8 +17,8 @@ export const OutsideClick = ({onClick, myStyle}) => {
 
 const Background = styled.div`
     position: fixed;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     top: 0;
     left: 0;
     z-index: 1;

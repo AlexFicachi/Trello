@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import {Header} from './components/Header';
 import {Board} from './components/Board';
@@ -14,186 +14,59 @@ function App() {
   const [state, setState] = useState(
     [
       {
-        name: 'Column One super long loansdgnasdognasdglaksdjgalsdkfjasldfkjasldfkjasldkfjsad flong long',
+        name: 'Requested',
         columnTitleInput: false,
         addCardInput: false,
         id: v4(),
         cards: [
           {
-            name: 'card one',
+            name: 'Lorem ipsum dolor sit amet',
             id: v4(),
             editCardInput: false,
           },
         ],
       },
       {
-        name: 'Column Two',
+        name: 'In Progress',
         columnTitleInput: false,
         addCardInput: false,
         id: v4(),
         cards: [
           {
-            name: 'First card in column two',
+            name: 'consectetur adipiscing elit',
+            id: v4(),
+            editCardInput: false,
+          }
+        ],
+      },
+      {
+        name: 'Done',
+        columnTitleInput: false,
+        addCardInput: false,
+        id: v4(),
+        cards: [
+          {
+            name: 'Add columns & cards',
             id: v4(),
             editCardInput: false,
           },
           {
-            name: 'card two in column two',
+            name: 'delete columns and cards',
             id: v4(),
             editCardInput: false,
           },
           {
-            name: 'This is the third card of the second row, and we\'ll be displaying the input on this one',
+            name: 'edit column and cards',
             id: v4(),
             editCardInput: false,
           },
           {
-            name: 'card two',
+            name: 'Drag and drop cards',
             id: v4(),
             editCardInput: false,
           },
           {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'card two',
+            name: 'Persist data',
             id: v4(),
             editCardInput: false,
           }
@@ -201,6 +74,17 @@ function App() {
       },
     ],
   )
+
+  useEffect(()=>{
+    const data = localStorage.getItem('state');
+    if (data){
+      setState(JSON.parse(data));
+    }
+  },[])
+
+  useEffect(()=>{
+    localStorage.setItem('state',JSON.stringify(state))
+  })
 
   const [onDragEnd] = useDragnDrop(state, setState);
 
