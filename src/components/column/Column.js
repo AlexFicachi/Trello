@@ -34,6 +34,6 @@ const Wrapper = styled.div`
     padding-left: 8px;
     font-size: 14px;
     line-height: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 8px;
     ${({myStyle})=>myStyle}
 `
