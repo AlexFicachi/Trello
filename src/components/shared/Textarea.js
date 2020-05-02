@@ -7,14 +7,14 @@ export const Textarea = ({value, placeholder, wrapperStyle, myStyle, bind}) => {
     const color = myContext.theme.color.columnText;
     const textareaRef = bind.ref;
     const [scrollHeight, setScrollHeight] = useState();
-
+    const dependency = textareaRef.current && textareaRef.current.scrollHeight;
     useEffect(()=>{
         textareaRef.current.focus();
         textareaRef.current.select();
     },[textareaRef])
     useEffect(()=>{
         setScrollHeight(textareaRef.current.scrollHeight)
-    })
+    },[dependency, textareaRef])
  
     return (
         <Wrapper

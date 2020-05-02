@@ -11,7 +11,6 @@ import {OutsideClick} from '../../shared/OutsideClick';
 export const AddCardForm = () => {
     const myContext = useContext(Context);
     const { addCard } = myContext.functions;
-    const { toggleAddCardInput } = myContext.functions;
     const { columnIndex } = myContext;
 
     const [bind, onSubmit] = useInput('', addCard, columnIndex);

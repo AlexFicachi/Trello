@@ -5,7 +5,6 @@ import {Card} from '../../card/Card';
 
 export const ColumnCards = () => {
     const myContext = useContext(Context);
-    const { boardRef } = myContext;
     const cards = myContext.state.cards.map((card,i)=>{
         return (
             <Context.Provider

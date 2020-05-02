@@ -1,5 +1,4 @@
-import {useState, useRef, useContext} from 'react'
-import {Context} from '../../Context';
+import {useState, useRef} from 'react'
 
 export const useInput = (initialValue='', submitResult, columnIdx, cardIdx) => {
     const [value, setValue] = useState(initialValue);

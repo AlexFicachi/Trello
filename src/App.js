@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import {Header} from './components/Header';
+import {Header} from './components/header/Header';
 import {Board} from './components/Board';
 import {Context} from './Context';
 import {v4} from 'uuid';
@@ -217,7 +217,7 @@ function App() {
 
 const theme = {
   color: {
-      header: 'linear-gradient(-45deg, #0067A3,#3498db)',
+      header: '#0268A3',
       columnText: '#2c3e50', // midnight blue
       columnTextLight: '#7f8c8d', // gray
       addButton: '#27ae60', // green

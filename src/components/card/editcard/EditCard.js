@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
 import {EditCardInput} from './EditCardInput';
 import {SaveCardButton} from './SaveCardButton';
@@ -10,7 +10,6 @@ import {OutsideClick} from '../../shared/OutsideClick';
 
 export const EditCard = () => {
     const myContext = useContext(Context);
-    const { toggleEditCardInput } = myContext.functions;
     const { editCard } = myContext.functions
     const { columnIndex } = myContext;
     const { cardIndex } = myContext;
