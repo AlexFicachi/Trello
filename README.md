@@ -1,5 +1,7 @@
 <h1><a href="https://trello-clone-4c47a.firebaseapp.com/">View live demo</a></h1>
 
+![project demo](https://user-images.githubusercontent.com/55371026/80995154-a8b11100-8df2-11ea-9a48-dc1586d18d2d.gif)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 This ReactJS app includes dynamic functionality such as:
