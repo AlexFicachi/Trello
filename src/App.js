@@ -10,6 +10,15 @@ import {sampleData} from './sampleData.js';
 
 
 function App() {
+  /*
+    TODO:
+      - extract App functions to engine.js
+      - turn sampleData.js into JSON file
+      - add double click to edit functionality to card
+      - add multiline(?) support in card content
+      - elaborate more on readme.md
+  */
+
   const [state, setState] = useState(sampleData)
   const [onDragEnd] = useDragnDrop(state, setState);
   const [inputDisplaying, setInputDisplaying] = useState(false);

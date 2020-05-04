@@ -7,6 +7,9 @@ import {Context} from '../../Context';
 
 export const RegularCard = () => {
     const myContext = useContext(Context);
+    const {toggleEditCardInput} = myContext.functions;
+    const {cardIndex} = myContext;
+    const {columnIndex} = myContext;
 
     return (
         <Draggable
@@ -18,6 +21,7 @@ export const RegularCard = () => {
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
                     ref={provided.innerRef}
+                    onDoubleClick={()=>toggleEditCardInput(cardIndex, columnIndex)}
                 >
                     <RegularCardText/>
                     <CardIcon/>
