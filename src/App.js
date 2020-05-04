@@ -5,75 +5,14 @@ import {Board} from './components/Board';
 import {Context} from './Context';
 import {v4} from 'uuid';
 import {useDragnDrop} from './components/useDragnDrop';
+import {sampleData} from './sampleData.js';
+
 
 
 function App() {
-  /*  TODO
-        Add inverse dataflow
-  */
-  const [state, setState] = useState(
-    [
-      {
-        name: 'Requested',
-        columnTitleInput: false,
-        addCardInput: false,
-        id: v4(),
-        cards: [
-          {
-            name: 'Lorem ipsum dolor sit amet',
-            id: v4(),
-            editCardInput: false,
-          },
-        ],
-      },
-      {
-        name: 'In Progress',
-        columnTitleInput: false,
-        addCardInput: false,
-        id: v4(),
-        cards: [
-          {
-            name: 'consectetur adipiscing elit',
-            id: v4(),
-            editCardInput: false,
-          }
-        ],
-      },
-      {
-        name: 'Done',
-        columnTitleInput: false,
-        addCardInput: false,
-        id: v4(),
-        cards: [
-          {
-            name: 'Add columns & cards',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'delete columns and cards',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'edit column and cards',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'Drag and drop cards',
-            id: v4(),
-            editCardInput: false,
-          },
-          {
-            name: 'Persist data',
-            id: v4(),
-            editCardInput: false,
-          }
-        ],
-      },
-    ],
-  )
+  const [state, setState] = useState(sampleData)
+  const [onDragEnd] = useDragnDrop(state, setState);
+  const [inputDisplaying, setInputDisplaying] = useState(false);
 
   useEffect(()=>{
     const data = localStorage.getItem('state');
@@ -85,10 +24,6 @@ function App() {
   useEffect(()=>{
     localStorage.setItem('state',JSON.stringify(state))
   })
-
-  const [onDragEnd] = useDragnDrop(state, setState);
-
-  const [inputDisplaying, setInputDisplaying] = useState(false);
 
   const closeAllInputs = () => {
     setInputDisplaying(false);
